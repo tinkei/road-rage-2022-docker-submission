@@ -1,3 +1,5 @@
+# This image image can also be pulled from gitlab.lrz.de:5005/tum-cps/commonroad-docker-submission/base:1.0.0
+
 FROM python:3.7-slim
 
 COPY ./dummy_solutions /commonroad/dummy_solutions
