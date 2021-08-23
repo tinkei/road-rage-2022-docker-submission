@@ -1,7 +1,9 @@
 # commonroad-docker-submission
 
 This repository provides a template for creating docker images with motion planners that can be evaluated on https://commonroad.in.tum.de/. The following guide provides the required commands to build and run the docker image. For more information regarding docker and its installation, have a look at the [getting started guide for docker](https://docs.docker.com/get-started/) and some helpful tips for [writing dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
-This repository already contains a template Dockerfile with SUMO and drivability-checker pre-installed.
+
+This repository already contains a template Dockerfile that is based on the base `gitlab.lrz.de:5005/tum-cps/commonroad-docker-submission/base` image whose Dockerfile can be found under the path `/base/Dockerfile` with SUMO and the drivability-checker pre-installed. The drivability checker can also be removed if not required. However, SUMO will be required to execute interactive scenarios. 
+
 
 # Overview: How it works
 
