@@ -30,22 +30,15 @@ RUN apt-get -y update && \
     default-jdk \
     maven \
     libeigen3-dev \ 
-    libavformat-dev \
-    libswscale-dev \
-    libopenscenegraph-dev \
-    libgtest-dev
-
+    
 # Checkout SUMO with fixed version v1_12_0
 RUN git clone --branch v1_12_0 --depth 1 --single-branch --recursive https://github.com/eclipse/sumo && \
-    cd sumo && \
-    git fetch origin refs/replace/*:refs/replace/* && \
-    cd .. && \
     rm -rf ./sumo/.git ./sumo/tests
 
 # Build SUMO
 RUN mkdir /sumo/build/cmake-build
 WORKDIR /sumo/build/cmake-build
-RUN cmake -D CMAKE_BUILD_TYPE=Debug ../..
+RUN cmake ../..
 RUN make -j 8
 WORKDIR /
 
