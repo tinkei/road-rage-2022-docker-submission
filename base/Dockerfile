@@ -29,8 +29,8 @@ RUN apt-get -y update && \
     swig \
     default-jdk \
     maven \
-    libeigen3-dev \ 
-    
+    libeigen3-dev 
+
 # Checkout SUMO with fixed version v1_12_0
 RUN git clone --branch v1_12_0 --depth 1 --single-branch --recursive https://github.com/eclipse/sumo && \
     rm -rf ./sumo/.git ./sumo/tests
