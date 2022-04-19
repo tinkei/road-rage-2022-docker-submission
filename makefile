@@ -3,7 +3,7 @@
 
 # Build the commonroad-submission:base image
 build-base:
-	@docker build -t commonroad-submission:base base
+	@docker build -t gitlab.lrz.de:5005/tum-cps/commonroad-docker-submission/base:1.0.1 base
 
 # Build the current submission based on base image
 # Can be run as:
@@ -27,5 +27,6 @@ run:
 		-v $(PWD)/scenarios:/commonroad/scenarios \
 		-v $(PWD)/solutions:/commonroad/solutions \
 		-v $(PWD)/planner:/commonroad/planner \
-		commonroad-submission:base \
-		python3.7 /commonroad/planner
+		gitlab.lrz.de:5005/tum-cps/commonroad-docker-submission/base:1.0.1 \
+		python3.9 /commonroad/planner
+

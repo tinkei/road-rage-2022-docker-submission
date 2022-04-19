@@ -1,10 +1,12 @@
 build-essential
 python3-pip
-python3.7-dev
-python3.7-distutils
-cmake
+python3-setuptools
+python3.9-dev
+python3.9-distutils
+make
 git
 wget
+curl
 unzip
 ffmpeg
 imagemagick
