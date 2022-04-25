@@ -1,3 +1,4 @@
 pybind11
 wheel
 setuptools
+commonroad-drivability-checker==2021.4.1
