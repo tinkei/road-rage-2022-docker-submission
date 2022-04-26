@@ -3,6 +3,9 @@ from commonroad.scenario.scenario import Scenario
 from commonroad.common.solution import Solution, CommonRoadSolutionReader
 from typing import Optional
 
+# import planner for interactive scenarios
+from simulation.simulations import simulate_with_planner
+
 
 def motion_planner(scenario: Scenario) -> Optional[Solution]:
     """
