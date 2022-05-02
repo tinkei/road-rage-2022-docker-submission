@@ -63,7 +63,7 @@ docker run \
     --rm \
     -v $(pwd)/scenarios:/commonroad/scenarios \
     -v $(pwd)/solutions:/commonroad/solutions \
-    -v $(pwd)/planner:/commonroad/planner \ # for both open and close loop planning
+    -v $(pwd)/planner:/commonroad/planner \ # for both open and close loop-planning
     -v $(pwd)/simulation:/commonroad-interactive-scenarios/simulation \ # only for close-loop planning
     usernameDockerhub/dummy:0.1
 ```
