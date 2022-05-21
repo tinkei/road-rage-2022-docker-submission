@@ -21,12 +21,13 @@ build:
 # folders as volume in order to reflect implementation
 # changes directly, and save the solutions for the given
 # scenarios.
+# Must be executed as:
+#	make run PWD=`pwd` TAG="mytag"
 run:
-	@docker run \
+	docker run \
 		--rm \
+		-e PYTHONUNBUFFERED=1 \
 		-v $(PWD)/scenarios:/commonroad/scenarios \
 		-v $(PWD)/solutions:/commonroad/solutions \
-		-v $(PWD)/planner:/commonroad/planner \
-		gitlab.lrz.de:5005/tum-cps/commonroad-docker-submission/base:1.0.1 \
-		python3.9 /commonroad/planner
+		commonroad-submission:$(TAG)
 

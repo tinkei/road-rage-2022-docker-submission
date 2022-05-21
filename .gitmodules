@@ -1,0 +1,3 @@
+[submodule "commonroad-search"]
+	path = commonroad-search
+	url = https://gitlab.lrz.de/road-rage/commonroad-search.git
