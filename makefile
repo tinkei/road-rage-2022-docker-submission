@@ -11,7 +11,14 @@ build-base:
 # 	or
 # 	make build TAG="mytag"
 build:
-	@docker build -t commonroad-submission:$(TAG) .
+	@docker build -t n0tcrc0mpet1t10nsubm1ss10n:$(TAG) .
+
+# Push the built image.
+push:
+	IMG_ID=$(sudo docker images -q isatum/n0tcrc0mpet1t10nsubm1ss10n:$(TAG)); \
+	echo $(IMG_ID); \
+	echo sudo docker tag $(IMG_ID) isatum/n0tcrc0mpet1t10nsubm1ss10n:$(TAG); \
+	echo sudo docker push isatum/n0tcrc0mpet1t10nsubm1ss10n:$(TAG);
 
 # Run the current implementation without building
 # Loads the
@@ -29,5 +36,15 @@ run:
 		-e PYTHONUNBUFFERED=1 \
 		-v $(PWD)/scenarios:/commonroad/scenarios \
 		-v $(PWD)/solutions:/commonroad/solutions \
-		commonroad-submission:$(TAG)
+		n0tcrc0mpet1t10nsubm1ss10n:$(TAG)
+
+# @docker run \
+# 	--rm \
+# 	-v $(PWD)/scenarios:/commonroad/scenarios \
+# 	-v $(PWD)/solutions:/commonroad/solutions \
+# 	-v $(PWD)/planner:/commonroad/planner \
+# 	-v $(PWD)/../commonroad-search:/commonroad-search \
+# 	n0tcrc0mpet1t10nsubm1ss10n:$(TAG) \
+# 	python3.9 /commonroad/planner
+
 
